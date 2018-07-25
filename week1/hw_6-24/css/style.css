@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+#about, #article, #linkholder{
+  background-color: rgba(230,230,230,0.6);
+  margin: 10px auto 10px auto;
+}
+
+.linkedarticle {
+  width: 30%;
+  margin: 5px 1% 5px 1%;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+body {
+  background-image: url("../images/what-the-hex.png");
+  background-color: #DDDDDD;
+}
+
+h1, h2, h3, h4, h5 {
+   font-family: 'Lora', serif;
+ }
+
+h1, h2, #article > p {
+  display: flex;
+  justify-content: center;
+  margin: auto 10% auto 10%
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+img {
+  height: 20%;
+  width: 20%;
+}
+
+#linkholder {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+#linkholder > h4 {
+  margin: auto 100% auto auto;
+}
