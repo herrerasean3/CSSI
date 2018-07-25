@@ -1,0 +1,103 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Roboto');
+
+body {
+  margin: 0px;
+  background-image: url("images/intersection.png");
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'PT Serif', serif;
+}
+
+ul {
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+  max-width: 50%;
+  margin: auto 25% 5px 25%;
+}
+
+li {
+  max-width: 50%;
+  align-self: center;
+  margin: 10
+}
+
+p {
+  font-size: 2em;
+}
+
+h4 {
+  font-style: italic;
+}
+
+#header {
+  color: white;
+  background-color: #4a75e6;
+  font-size: 20px;
+  height: 200px;
+  margin: 0px;
+  padding-top: 3%;
+  text-align: center;
+  width: 100%;
+}
+
+#links {
+  background-color: #Febc1f;
+  height: 50px;
+  text-align: center;
+}
+
+#info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.school {
+  max-width: 50%;
+  height: auto;
+  margin: auto;
+}
+
+.link {
+  color: grey;
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+
+.class101 {
+  max-width: 20%;
+  height: auto;
+  margin: auto 10% auto 10%;
+  border-radius: 25%;
+}
+
+#students {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
