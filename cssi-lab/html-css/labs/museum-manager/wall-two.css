@@ -19,17 +19,46 @@ body {
 }
 
 #row1 {
-  display: /* insert the necessery property */;
+  display: flex;
   height: 100px;
+  flex-direction: row;
+  margin: 5px;
 }
 /* Style your second row below */
 
-.pic2 {
-  /* Insert the general styling that will apply to ALL images */
+#row2 {
+  display: flex;
+  height: 100px;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.pic {
+  height: 100%;
 }
 
 #m1 {
-  flex: /* Finish the flex property for this image */;
+  flex: 0 1 auto;
 }
 
 /* Insert the styling for the remaining images below */
+
+#m2 {
+  flex: 1 1 auto;
+}
+
+#m3 {
+  flex: 2 1 auto;
+}
+
+#m4 {
+  flex: 2 1 auto;
+}
+
+#m5 {
+  flex: 1 1 auto;
+}
+
+#m6 {
+  flex: 0 1 auto;
+}

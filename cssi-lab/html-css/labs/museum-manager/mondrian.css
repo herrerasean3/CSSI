@@ -14,4 +14,42 @@
  * limitations under the License.
  */
 
+body {
+  margin: 0;
+}
 
+#painting {
+  display: flex;
+}
+
+.white {
+  color: white;
+}
+
+.lgrey {
+  color: lightgrey;
+}
+
+.dgrey {
+  color: darkgrey;
+}
+
+.black {
+  color: black;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.yellow {
+  color: yellow;
+}
+
+div {
+  border: 1px solid black;
+}

@@ -19,3 +19,27 @@ body {
 }
 
 /* Style your wall below */
+#wall {
+  display: flex;
+  flex-direction: column;
+}
+
+.pic {
+  height: 200px;
+  width: 200px;
+}
+
+#m1 {
+  align-self: flex-end;
+  flex: 0 0 auto;
+}
+
+#m2 {
+  align-self: center;
+  flex: 0 0 auto;
+}
+
+#m3 {
+  align-self: flex-start;
+  flex: 0 0 auto;
+}

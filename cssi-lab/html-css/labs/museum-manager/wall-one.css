@@ -27,11 +27,25 @@ body {
 #row1 {
   display: flex;
   height: 100px;
-  /*justify-content: ;*/
+  justify-content: space-around;
 }
 
 #vg2 {
   flex:0 0 auto;
+  order: 3;
 }
 
-/* Insert the styling for the remaining paintings below */
+#vg3 {
+  flex:0 0 auto;
+  order: 1;
+}
+
+#vg4 {
+  flex:0 0 auto;
+  order: 2;
+}
+
+#vg5 {
+  flex:0 0 auto;
+  order: 4;
+}
