@@ -29,7 +29,7 @@ let dogType2 = "bulldog";
 
 // Complete Task 2 Below
 
-if (dogType2.toUpperCase() == "CORGI") {
+if (dogType2.toUpperCase() == ="CORGI") {
   console.log(`I will walk ${dogName2} the ${dogType2} today at 12:00pm.`)
 } else {
   console.log(`I will walk ${dogName2} the ${dogType2} today at 2:00pm.`)
