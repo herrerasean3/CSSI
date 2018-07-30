@@ -18,17 +18,54 @@ let dogType1 = "beagle";
 
 // Complete Task 1 Below
 
-let task1 = document.createElement("p",);
-
+  let task1 = document.createElement("div");
+  let t1Cont = document.createTextNode(`I will walk ${dogName1} the ${dogType1} today at 12:00pm`);
+  task1.appendChild(t1Cont);
+   var targetEle = document.getElementById("script");
+   document.body.insertBefore(task1, targetEle);
 
 let dogName2 = "Joe";
 let dogType2 = "bulldog";
 
 // Complete Task 2 Below
 
-
+if (dogType2.toUpperCase() == "CORGI") {
+  console.log(`I will walk ${dogName2} the ${dogType2} today at 12:00pm.`)
+} else {
+  console.log(`I will walk ${dogName2} the ${dogType2} today at 2:00pm.`)
+}
 
 let dogName = "Lola";
 let dogType = "poodle";
 
 // Complete Task 3 Below
+
+function dogSchedulerBasic(name, breed) {
+  if (breed.toUpperCase() == "CORGI" || "BEAGLE") {
+    console.log(`I will walk ${dogName2} the ${dogType2} today at 12:00pm.`);
+  } else if(breed.toUpperCase() == "BULLDOG") {
+    console.log(`I will walk ${dogName2} the ${dogType2} today at 1:00pm.`);
+  } else {
+    console.log(`I will walk ${dogName2} the ${dogType2} today at 2:00pm.`);
+  }
+}
+
+//Extension Below
+
+function dogSchedulerAdv(name, breed, dogOwner) {
+  var str = name.toLowerCase();
+  str = str.split("");
+  if (dogOwner === null){
+    dogOwner = "Unknown";
+  }
+  str[0] = str[0].toUpperCase();
+  str = str.join("");
+
+  if (breed.toUpperCase() == "CORGI" || "BEAGLE") {
+    console.log(`I will walk ${dogOwner}'s ${str} today at 12:00pm.`);
+  } else if(breed.toUpperCase() == "BULLDOG") {
+    console.log(`I will ${dogOwner}'s walk ${str} today at 1:00pm.`);
+  } else {
+    console.log(`I will ${dogOwner}'s walk ${str} today at 2:00pm.`);
+  }
+}
