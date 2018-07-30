@@ -18,6 +18,7 @@ let dogType1 = "beagle";
 
 // Complete Task 1 Below
 
+let task1 = document.createElement("p",);
 
 
 let dogName2 = "Joe";
