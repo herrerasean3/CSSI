@@ -41,9 +41,9 @@ let dogType = "poodle";
 // Complete Task 3 Below
 
 function dogSchedulerBasic(name, breed) {
-  if (breed.toUpperCase() == "CORGI" || "BEAGLE") {
+  if (breed.toUpperCase() === "CORGI" || "BEAGLE") {
     console.log(`I will walk ${dogName2} the ${dogType2} today at 12:00pm.`);
-  } else if(breed.toUpperCase() == "BULLDOG") {
+  } else if(breed.toUpperCase() === "BULLDOG") {
     console.log(`I will walk ${dogName2} the ${dogType2} today at 1:00pm.`);
   } else {
     console.log(`I will walk ${dogName2} the ${dogType2} today at 2:00pm.`);
@@ -61,9 +61,9 @@ function dogSchedulerAdv(name, breed, dogOwner) {
   str[0] = str[0].toUpperCase();
   str = str.join("");
 
-  if (breed.toUpperCase() == "CORGI" || "BEAGLE") {
+  if (breed.toUpperCase() === "CORGI" || "BEAGLE") {
     console.log(`I will walk ${dogOwner}'s ${str} today at 12:00pm.`);
-  } else if(breed.toUpperCase() == "BULLDOG") {
+  } else if(breed.toUpperCase() === "BULLDOG") {
     console.log(`I will ${dogOwner}'s walk ${str} today at 1:00pm.`);
   } else {
     console.log(`I will ${dogOwner}'s walk ${str} today at 2:00pm.`);
