@@ -1,0 +1,55 @@
+Sean Herrera
+8/1/2018
+CSSI
+
+1.
+  console.log("I will succeed.");
+
+2.
+  let fname = Ayy;
+  let lname = Lmao;
+  console.log(`${fname} ${lname}`);
+
+3.
+  let z = y;
+  y = x;
+  x = z;
+
+4.
+  Both hasAccess and hasPass must be False for the code to output "I am in".
+
+5.
+  if (x <= y){
+  console.log(x);
+  } else {
+  console.log(y);
+  }
+
+6.
+  if (num <= -10 || num >= 10){
+  console.log(num);
+  }
+
+7.
+  i will equal 5 the second time the function is checked.
+
+8.
+  for (i=7;i<77;i++){
+    if (i != 7 && i != 77){
+    console.log(i);
+    }
+  }
+
+9.
+  for (i=10;i>90;i++){
+    if (i != 10 && i != 22 && i != 56){
+    console.log(i);
+    }
+  }
+
+10.
+  for (i=100;i<2;i--){
+    if (i%2 === 0){
+    console.log(i);
+    }
+  }
