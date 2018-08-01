@@ -54,3 +54,22 @@ body {
 #green {
   background-color: green;
 }
+
+#clear {
+  background-color: #DCDCDC;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.green {
+  background-color: green;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
