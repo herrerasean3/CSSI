@@ -20,36 +20,86 @@ body {
 
 #painting {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#m1 {
+  flex: 0 0 auto;
+  height: 25%;
+  width: 10%;
+}
+
+#m2 {
+  flex: 0 0 auto;
+  height: 10%;
+  width: 30%;
+}
+
+#m3 {
+  flex: 0 0 auto;
+  height: 15%;
+  width: 20%;
+}
+
+#m4 {
+  flex: 0 0 auto;
+  height: 15%;
+  width: 20%;
+}
+
+#m5 {
+  flex: 0 0 auto;
+  height: 25%;
+  width: 20%;
+}
+
+#m6 {
+  flex: 0 0 auto;
+  height: 15%;
+}
+
+#m7 {
+
+}
+
+#m8 {
+
 }
 
 .white {
-  color: white;
+  background-color: white;
 }
 
-.lgrey {
-  color: lightgrey;
-}
-
-.dgrey {
-  color: darkgrey;
+.grey {
+  background-color: grey;
 }
 
 .black {
-  color: black;
+  background-color: black;
 }
 
 .red {
-  color: red;
+  background-color: red;
 }
 
 .blue {
-  color: blue;
+  background-color: blue;
 }
 
 .yellow {
-  color: yellow;
+  background-color: yellow;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 div {
-  border: 1px solid black;
 }
