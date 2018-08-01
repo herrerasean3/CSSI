@@ -43,22 +43,6 @@ body {
   width: 350px;
 }
 
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#green {
-  background-color: green;
-}
-
-#clear {
-  background-color: #DCDCDC;
-}
-
 .red {
   background-color: red;
   color: white;
@@ -72,4 +56,9 @@ body {
 .blue {
   background-color: blue;
   color: white;
+}
+
+.clear {
+  background-color: #DCDCDC;
+  color: black;
 }

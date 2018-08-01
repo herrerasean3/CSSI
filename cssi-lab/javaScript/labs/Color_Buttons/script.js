@@ -13,10 +13,10 @@
 // limitations under the License.
 
 // Use querySelector to store the div in a variable.
-let redButton = document.querySelector('#red');
-let greenButton = document.querySelector('#green');
-let blueButton = document.querySelector('#blue');
-let clearButton = document.querySelector('#clear');
+let redButton = document.querySelector('#r');
+let greenButton = document.querySelector('#g');
+let blueButton = document.querySelector('#b');
+let clearButton = document.querySelector('#c');
 let box = document.querySelector('#responseBox');
 
 // Use addEventListener to respond to a click event.
