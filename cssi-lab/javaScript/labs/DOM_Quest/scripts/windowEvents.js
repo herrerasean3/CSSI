@@ -20,14 +20,16 @@ box6.style.height = '100px';
 box6.style.width = '100px';
 window.addEventListener("keypress", e=> {
   console.log(e.which || e.keyCode);
+  let b6h = parseInt(box6.style.height.replace("px",""))
+  let b6w = parseInt(box6.style.width.replace("px",""))
   if (e.which === 99 || e.keyCode === 99) {
     box6.style.borderRadius = '50%';
-    box6.style.height = `${parseInt(box6.style.height.replace("px",""))/2}px`;
-    box6.style.width = `${parseInt(box6.style.width.replace("px",""))/2}px`;
+    box6.style.height = `${b6h/2}px`;
+    box6.style.width = `${b6w/2}px`;
   } else if (e.which === 115 || e.keyCode === 115) {
     box6.style.borderRadius = '0%';
-    box6.style.height = `${parseInt(box6.style.height.replace("px",""))*2}px`;
-    box6.style.width = `${parseInt(box6.style.width.replace("px",""))*2}px`;
+    box6.style.height = `${b6h*2}px`;
+    box6.style.width = `${b6w*2}px`;
   }
 })
 
