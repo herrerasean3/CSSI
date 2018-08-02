@@ -13,11 +13,32 @@
 // limitations under the License.
 
 console.log("Running Window Events Script");
+let box6 = document.getElementById('box6');
+let rect = document.getElementById('rect');
+let masterD = document.getElementById('DOMaster');
+box6.style.height = '100px';
+box6.style.width = '100px';
 window.addEventListener("keypress", e=> {
-console.log(e.keyCode);
-
-
+  console.log(e.which || e.keyCode);
+  if (e.which === 99 || e.keyCode === 99) {
+    box6.style.borderRadius = '50%';
+    box6.style.height = `${parseInt(box6.style.height.replace("px",""))/2}px`;
+    box6.style.width = `${parseInt(box6.style.width.replace("px",""))/2}px`;
+  } else if (e.which === 115 || e.keyCode === 115) {
+    box6.style.borderRadius = '0%';
+    box6.style.height = `${parseInt(box6.style.height.replace("px",""))*2}px`;
+    box6.style.width = `${parseInt(box6.style.width.replace("px",""))*2}px`;
+  }
 })
 
+window.addEventListener('scroll',()=>{
+  if (window.scrollY > 50){
+    rect.style.backgroundColor = "black";
+    masterD.classList.remove("hide");
+  } else {
+    rect.style.backgroundColor = "tomato";
+    masterD.classList.add("hide");
+  }
+})
 
 // insert a function that prints out the key code of a key pressed
