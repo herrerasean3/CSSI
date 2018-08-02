@@ -13,3 +13,31 @@
 // limitations under the License.
 
 console.log("Running Click Events Script");
+let aBox = document.querySelectorAll('.box');
+let rOB = document.querySelectorAll('#container1 .box');
+
+for (var i = 0; i < rOB.length; i++) {
+  rOB[i].addEventListener('click', rOBCheck);
+}
+
+for (var i = 0; i < aBox.length; i++) {
+  aBox[i].addEventListener('click',activeBox);
+}
+
+function rOBCheck(e){
+  e.target.style.backgroundColor = `rgb(${randomColor(255)},${randomColor(255)},${randomColor(255)})`;
+}
+
+function activeBox(e){
+  e.target.classList.toggle('active');
+}
+
+function randomColor(max){
+  return  getRandomIntInclusive(0,max);
+}
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+}
