@@ -57,7 +57,7 @@ function generateMsg() {
     }
   }
       console.log(adj);
-  let stArr = [`When I was ${num[0]}... ${num[0]} years old, I saw for the first time in my life... I saw an ${n[0]} of ${n[1]}. I saw a ${n[2]}... a ${n[2]} that, though ${adj[0]} as it seemed, ${v[0]} me... ${v[0]} my being, ${v[0]} who I am... Made me who I am... `, `The ${n[0]}, ${n[1]}, the ${n[0]} was ${adj[0]}... no more than maybe ${num[0]} years since ${n[2]}, since... since coming into ${n[2]}... and there it was before me in print, I saw it... a ${n[0]}... What was it ${v[0]}?`];
+  let stArr = [`When I was ${num[0]}... ${num[0]} years old, I saw for the first time in my life... I saw a ${n[0]} of ${n[1]}. I saw a ${n[2]}... a ${n[2]} that, though ${adj[0]} as it seemed, ${v[0]} me... ${v[0]} my being, ${v[0]} who I am... Made me who I am... `, `The ${n[0]}, ${n[1]}, the ${n[0]} was ${adj[0]}... no more than maybe ${num[0]} years since ${n[2]}, since... since coming into ${n[2]}... and there it was before me in print, I saw it... a ${n[0]}... What was it ${v[0]}?`];
   console.log(stArr[getRandomIntInclusive(0, stArr.length-1)]);
   stry.innerHTML = `${stArr[getRandomIntInclusive(0, stArr.length-1)]}`;
 }

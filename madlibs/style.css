@@ -12,9 +12,7 @@ body{
 ul{
   list-style: none;
   flex: auto;
-}
-li{
-  margin: 10%;
+  margin: 0 45% 0 45%;
 }
 @keyframes pulse {
   100%{
