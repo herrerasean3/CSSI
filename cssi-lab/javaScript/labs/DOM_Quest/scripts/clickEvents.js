@@ -16,16 +16,19 @@ console.log("Running Click Events Script");
 let aBox = document.querySelectorAll('.box');
 let rOB = document.querySelectorAll('#container1 .box');
 
-for (var i = 0; i < rOB.length; i++) {
-  rOB[i].addEventListener('click', rOBCheck);
-}
+rOB.forEach((e)=> {
+  e.addEventListener('click', rOBCheck);
+})
 
-for (var i = 0; i < aBox.length; i++) {
-  aBox[i].addEventListener('click',activeBox);
-}
+aBox.forEach((e)=> {
+  e.addEventListener('click', activeBox);
+})
 
 function rOBCheck(e){
   e.target.style.backgroundColor = `rgb(${randomColor(255)},${randomColor(255)},${randomColor(255)})`;
+  for (var i = 0; i < rOB.length; i++) {
+    rOB[i].style.backgroundColor = `${e.target.style.backgroundColor}`
+  }
 }
 
 function activeBox(e){
