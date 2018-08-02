@@ -1,0 +1,23 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: rgb(120,100,255);
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+ul{
+  list-style: none;
+  flex: auto;
+}
+li{
+  margin: 10%;
+}
+@keyframes pulse {
+  100%{
+    background-color: #DCDCDC;
+  }
+}
