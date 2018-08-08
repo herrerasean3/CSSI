@@ -37,8 +37,8 @@ def game(word):
                 elif guess in chosenWord:
                     addGuess(board,chosenWord,guess)
                 else:
-                    print "Incorrect guess! You have {0} mistakes remaining.".format(tries)
                     tries -= 1
+                    print "Incorrect guess! You have {0} mistakes remaining.".format(tries)
 
                     guesses.append(guess)
         else:
