@@ -15,6 +15,8 @@
 # limitations under the License.
 
 choice = ""
+item = ""
+answer = ""
 
 print("Welcome to the shopping list app!")
 
@@ -27,7 +29,43 @@ while choice.lower() != "e":
     print("c. Check to see if an item is on the list")
     print("d. Show all items on the list")
     print("e. exit")
-    
-    choice = input("Enter your choice [a|b|c|d|e]:")
-    
+
+    choice = raw_input("Enter your choice [a|b|c|d|e]:")
+
+    if choice == "a":
+        item = raw_input("Enter a new item: ").strip()
+        item = item.split(",")
+        if item in shopping_list == True:
+            print("{0} is already in the shopping list!".format(item))
+        else:
+            shopping_list.extend(item)
+            print("{0} has been added to the shopping list!".format(item))
+
+    elif choice == "b":
+        item = raw_input("Enter an item to remove: ")
+        if item in shopping_list == False:
+            print("{0} is not on your shopping list!".format(item))
+        else:
+            answer = raw_input("Are you sure you want to remove {0} to your shopping list? y/n".format(item)).lower()
+            if answer == "y":
+                shopping_list.remove(item)
+                print("{0} has been removed from the shopping list!".format(item))
+
+    elif choice == "c":
+        item = raw_input("Enter the item's name: ")
+        if item in shopping_list == True:
+            print("{0} is in the shopping list".format(item))
+        else:
+            print("{0} is not in the shopping list.".format(item))
+            answer = raw_input("Would you like to add {0} to your shopping list? y/n ".format(item)).lower()
+            if answer == "y":
+                shopping_list.extend(item)
+                print("{0} has been added to the shopping list!".format(item))
+
+    elif choice == "d":
+        print(shopping_list)
+
+    else:
+        break
+
     # Your code below! Handle the cases when the user chooses a, b, c, d, or e
