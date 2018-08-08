@@ -64,8 +64,5 @@ while choice.lower() != "e":
 
     elif choice == "d":
         print(shopping_list)
-
     else:
         break
-
-    # Your code below! Handle the cases when the user chooses a, b, c, d, or e
