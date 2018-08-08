@@ -64,7 +64,6 @@ while choice.lower() != "e":
 
     elif choice == "d":
         print(shopping_list)
-
     else:
         break
 
