@@ -20,7 +20,7 @@ def read_process_data():
         # - joins each line in the file into one big string
         # - removes all newlines and carriage returns
         # - converts everything to lowercase
-        content = ' '.join(f.readlines()).replace('\n','').replace('\r','').lower()
+        content = ' '.join(f.readlines()).replace('\n','').replace('\r','').replace('\"','').lower()
         return content
 
 
@@ -37,6 +37,18 @@ def get_highest_words(counts_dictionary, count):
 
 
 content = read_process_data()
+stopWords = get_stop_words()
 
 # Write your solution below!
+word_count = {}
 
+words = content.split(" ")
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        if word != "" and word not in stopWords:
+            word_count[word] = 1
+
+get_highest_words(word_count, int(raw_input("Enter a number: ")))
