@@ -15,7 +15,7 @@
 # limitations under the License.
 
 import sys
-from banking import BankAccount
+from banking import *
 
 acc = BankAccount("test acc", 1000)
 print("Created bank account 'test acc' with initial balance 1000")
@@ -84,10 +84,6 @@ assert acc.label == "real acc", \
     "Expected label to be 'real acc', instead saw %s" % acc.label
 print("Test 4.1 passed!")
 
-cont = input("\nDid you do level 2? [y|n]: ").lower()
-if cont == "n":
-    sys.exit()
-
 acc2 = BankAccount("new acc", 200)
 print("\nCreated bank account 'new acc' with initial balance 200")
 
@@ -123,3 +119,6 @@ assert acc.balance == 1100, \
 assert acc2.balance == 500, \
     "Expected 'new acc' balance 500, instead saw %s" % acc.balance
 print("Test 5.2 passed!")
+print time.time()
+print acc.transactions
+print acc.listTrans('new acc')
