@@ -31,37 +31,63 @@
 # limitations under the License.
 #
 import webapp2
+import jinja2
 import os
 import random
 
 
 def get_fortune():
     #add a list of fortunes to the empty fortune_list array
-    fortune_list=['fortune1', 'fortune2']
+    fortune_list=['Its amazing how much good you can do if you dont care who gets the credit.', 'If a person who has caused you pain and suffering has brought you, reconsider that person\'s value in your life.','Good things take time.','I am being held hostage in a fortune cookie factory! Please send help!','You will enjoy good health, you will be surrounded by luxury.','Take control of your life rather than letting things happen just like that!','One who admires you greatly is hidden before your eyes.','If you have something worth fighting for, then fight for it.','Never give up on someone that you don\'t go a day without thinking about.','You are always welcome in any gathering.','You have an important new business development shaping up.']
     #use the random library to return a random element from the array
-    random_fortune =
+
+    random_fortune = random.choice(fortune_list)
     return(random_fortune)
 
 
 #remember, you can get this by searching for jinja2 google app engine
-jinja_current_directory = "insert jinja2 environment variable here"
+jinja_current_directory = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True
+)
 
 class FortuneHandler(webapp2.RequestHandler):
     def get(self):
-        # In part 2, instead of returning this string,
-        # make a function call that returns a random fortune.
-        self.response.write('a response from the FortuneHandler')
+        fortune_template = jinja_current_directory.get_template('templates/fortune-results.html')
+
+        fort_dic={"fortune": get_fortune()
+        }
+
+        self.response.write(fortune_template.render(fort_dic))
+
     #add a post method
-    #def post(self):
+    def post(self):
+        fortune_template = jinja_current_directory.get_template('templates/fortune-results.html')
+        uas = self.request.get('user_astrological_sign')
+
+        fort_dic={
+        "fortune": get_fortune(),
+        "user_astro_sign": uas,
+        "action": True
+        }
+
+        self.response.write(fortune_template.render(fort_dic))
 
 class HelloHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello World. Welcome to the root route of my app')
+
+class GoodbyeHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write('My response is Goodbye World.')
+
 
 #the route mapping
 app = webapp2.WSGIApplication([
     #this line routes the main url ('/')  - also know as
     #the root route - to the Fortune Handler
     ('/', HelloHandler),
-    ('/predict', FortuneHandler) #maps '/predict' to the FortuneHandler
+    ('/predict', FortuneHandler), #maps '/predict' to the FortuneHandler
+    ('/farewell',GoodbyeHandler)
 ], debug=True)
