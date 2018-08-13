@@ -13,18 +13,44 @@
 # limitations under the License.
 
 import webapp2
+import jinja2
+import os
 
+the_jinja_env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.write('<h1>Hello, World!</h1>')
+        welcome_template = the_jinja_env.get_template('templates/welcome.html')
+
+        temlate_dic={"country": "usa",
+        "region_name": "north east",
+        "region_num": 121,
+        "url": ["http://images.ny-pictures.com/photo2/m/29248_m.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Philadelphia_skyline_August_2007.jpg/320px-Philadelphia_skyline_August_2007.jpgAC"],
+        "city": ["new york","boston","philadelphia"],
+        "message": "welcome to:"
+        }
+
+        self.response.write(welcome_template.render(temlate_dic))
 
 class CssiPage(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        self.response.write('<h1Goodbye World!</h1>')
+        self.response.write('<h1>Goodbye World!</h1>')
 
-routes = [('/', MainPage),('/google', CssiPage)]
+class ShowMemeHandler(webapp2.RequestHandler):
+    def post(self):
+        results_template = the_jinja_env.get_template('templates/results.html')
+        firstname = self.request.get('firstname')
+        lastname = self.request.get('lastname')
+        age = self.request.get('age')
+
+        webform_dict = {"fn": firstname, "ln": lastname, "age": age}
+        self.response.write(results_template.render(webform_dict))
+
+
+routes = [('/', MainPage),('/google', CssiPage),('/showresults',ShowMemeHandler)]
 
 app = webapp2.WSGIApplication(routes, debug=True)
