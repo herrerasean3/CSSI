@@ -38,7 +38,19 @@ import random
 
 def get_fortune():
     #add a list of fortunes to the empty fortune_list array
-    fortune_list=['Its amazing how much good you can do if you dont care who gets the credit.', 'If a person who has caused you pain and suffering has brought you, reconsider that person\'s value in your life.','Good things take time.','I am being held hostage in a fortune cookie factory! Please send help!','You will enjoy good health, you will be surrounded by luxury.','Take control of your life rather than letting things happen just like that!','One who admires you greatly is hidden before your eyes.','If you have something worth fighting for, then fight for it.','Never give up on someone that you don\'t go a day without thinking about.','You are always welcome in any gathering.','You have an important new business development shaping up.']
+    fortune_list=[
+    'Its amazing how much good you can do if you dont care who gets the credit.',
+    'If a person who has caused you pain and suffering has brought you, reconsider that person\'s value in your life.',
+    'Good things take time.',
+    'I am being held hostage in a fortune cookie factory! Please send help!',
+    'You will enjoy good health, you will be surrounded by luxury.',
+    'Take control of your life rather than letting things happen just like that!',
+    'One who admires you greatly is hidden before your eyes.',
+    'If you have something worth fighting for, then fight for it.',
+    'Never give up on someone that you don\'t go a day without thinking about.',
+    'You are always welcome in any gathering.',
+    'You have an important new business development shaping up.'
+    ]
     #use the random library to return a random element from the array
 
     random_fortune = random.choice(fortune_list)
