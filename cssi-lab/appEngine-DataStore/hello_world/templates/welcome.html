@@ -27,5 +27,8 @@
       <br><br>
       <input type="submit" value="Submit">
     </form>
+    {% for item in query_result %}
+      <p>{{ item.firstname }} is {{ item.lastname }}</p>
+    {% endfor %}
   </body>
 </html>

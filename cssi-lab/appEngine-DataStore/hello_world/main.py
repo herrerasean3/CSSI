@@ -15,6 +15,7 @@
 import webapp2
 import jinja2
 import os
+from google.appengine.ext import ndb
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -24,21 +25,18 @@ the_jinja_env = jinja2.Environment(
 class MainPage(webapp2.RequestHandler):
     def get(self):
         welcome_template = the_jinja_env.get_template('templates/welcome.html')
+        query_result = Blog.query()
 
         temlate_dic={"country": "usa",
         "region_name": "north east",
         "region_num": 121,
         "url": ["http://images.ny-pictures.com/photo2/m/29248_m.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Philadelphia_skyline_August_2007.jpg/320px-Philadelphia_skyline_August_2007.jpgAC"],
         "city": ["new york","boston","philadelphia"],
-        "message": "welcome to:"
+        "message": "welcome to:",
+        "query_result": query_result
         }
 
         self.response.write(welcome_template.render(temlate_dic))
-
-class CssiPage(webapp2.RequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.write('<h1>Goodbye World!</h1>')
 
 class ShowMemeHandler(webapp2.RequestHandler):
     def post(self):
@@ -47,10 +45,19 @@ class ShowMemeHandler(webapp2.RequestHandler):
         lastname = self.request.get('lastname')
         age = self.request.get('age')
 
+        entity = Blog(firstname=firstname, lastname=lastname)
+        entity.put()
+
         webform_dict = {"fn": firstname, "ln": lastname, "age": age}
         self.response.write(results_template.render(webform_dict))
 
+class Blog(ndb.Model):
+    firstname = ndb.StringProperty()
+    lastname = ndb.StringProperty()
+    created_at = ndb.DateTimeProperty(auto_now_add=True)
 
-routes = [('/', MainPage),('/google', CssiPage),('/showresults',ShowMemeHandler)]
+
+
+routes = [('/', MainPage),('/showresults',ShowMemeHandler)]
 
 app = webapp2.WSGIApplication(routes, debug=True)
