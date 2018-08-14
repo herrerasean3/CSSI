@@ -27,7 +27,7 @@ def seed_data():
 
     ron_wand=Wand(length = 14.0, material = "willow", core="unicorn", owner=ron_key)
     harry_wand=Wand(length = 11.0, material = "holly", core="phoenix feather", owner=harry_key)
-    hermione_wand = Wand(length=10.75, material="vinewood", core="dragon heartstring", owner=hermione_key)
+    hermione_wand=Wand(length=10.75, material="vinewood", core="dragon heartstring", owner=hermione_key)
 
     ron_wand.put()
     harry_wand.put()
