@@ -34,7 +34,24 @@ import webapp2
 import jinja2
 import os
 import random
+from google.appengine.api import urlfetch
+import urllib
+import json
 
+URL = 'https://www.googleapis.com/customsearch/v1?'
+KEY = 'AIzaSyBJDouf30lFPTJc6QY0C7YesP1pqAR9b7A'
+CX = '005226442852353384715:5efrqp9ujjw'
+
+class simpleURLFetcher(webapp2.RequestHandler):
+    def get(self):
+        query = 'goose'
+        query_params = {'key': KEY, 'cx': CX, 'q': query}
+        result = urlfetch.fetch(URL + urllib.urlencode(query_params))
+        if result.status_code == 200:
+            self.response.write(result.status_code)
+            self.response.write(result.content)
+        else:
+            self.response.status_code = result.status_code
 
 def get_fortune():
     #add a list of fortunes to the empty fortune_list array
@@ -101,5 +118,5 @@ app = webapp2.WSGIApplication([
     #the root route - to the Fortune Handler
     ('/', HelloHandler),
     ('/predict', FortuneHandler), #maps '/predict' to the FortuneHandler
-    ('/farewell',GoodbyeHandler)
+    ('/simple',simpleURLFetcher)
 ], debug=True)
